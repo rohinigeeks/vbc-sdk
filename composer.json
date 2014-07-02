@@ -1,6 +1,20 @@
 {
+    "name": "incube8/vbc-sdk",
+    "type": "library",
+    "description": "Vbc-sdk is what the title is. It is an SDK for the VBC API.",
+    "homepage": "http://verifiedbycam.com/",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "John Rocela",
+            "email": "johnr@incube8.sg",
+            "homepage": "https://github.com/jmrocela"
+        }
+    ],
 
     "require": {
+        "php": ">=5.4.0",
         "guzzlehttp/guzzle": "dev-master"
     }
 }
