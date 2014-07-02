@@ -2,19 +2,19 @@
 
 namespace Vbc;
 
-use Guzzlehttp;
+use GuzzleHttp;
 
 class Client
 {
 
-    protected $baseUrl = 'https://{subdomain}.howlovely.co/{version}';
+    protected $baseUrl = 'https://{subdomain}.howlovely.co/{+version*}';
 
     protected $client;
 
     public function __construct($config = [])
     {
         $this->client = new GuzzleHttp\Client([
-            'base_url' => [$baseUrl, ['subdomain' => 'api', 'version' => 'v1']],
+            'base_url' => [$this->baseUrl, ['subdomain' => 'api', 'version' => 'v1']],
             'defaults' => [
                 'headers' => [
                     'X-App-Key' => $config['AppKey'],
@@ -22,6 +22,9 @@ class Client
                 ]
             ]
         ]);
+
+        // disable this
+        $this->client->setDefaultOption('verify', false);
     }
 
     public static function getInstance($config = [])
@@ -40,7 +43,7 @@ class Client
     }
 
     private function isMobile($ua) {
-        preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $ua);
+        return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", strtolower($ua));
     }
 
 }
