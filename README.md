@@ -1,6 +1,8 @@
 vbc-sdk
 =======
 
+An SDK for the VBC API in PHP. Enjoy!
+
 ## Installation
 
 The library uses Composer as it's dependency manager. Thus, installing this library follows Composers and the PSR standards. You can read more about composer at this link https://getcomposer.org/
@@ -87,12 +89,12 @@ An array of options to help create the request
 
 --
 
-##### verify(string $requestId)
+#### verify(string $requestId)
 Verify a Request.
 
-###### Parameters
+##### Parameters
 
-####### requestId
+###### requestId
 A Mongo ObjectId that corresponds to the request specified.
 
 -- 
@@ -100,7 +102,7 @@ A Mongo ObjectId that corresponds to the request specified.
 #### reject(string $requestId)
 Reject a Request.
 
-#####Parameters
+##### Parameters
 
 ###### requestId
 A Mongo ObjectId that corresponds to the request specified.
