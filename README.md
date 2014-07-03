@@ -26,10 +26,10 @@ and add the library to the require block..
     }
 ...
 ```
-Run composer update or composer install to include the library to your application
+Run `composer update` or `composer install` to include the library to your application
 
 ## Usage
-You must obtain an AppKey and a SecretKey from VBC before using this SDK.
+You must obtain an `AppKey` and a `SecretKey` from VBC before using this SDK.
 
 ```php
 <?php
@@ -58,7 +58,7 @@ $tokenOrPin = $request->create([
  
 print_r($tokenOrPin);
 ```
-As you can see there are 2 ways to create a Vbc\Request instance, by either the object oriented way, or statically; both yield the same result.
+As you can see there are 2 ways to create a `Vbc\Request` instance, by either the object oriented way, or statically; both yield the same result.
 
 ## API Reference
 
@@ -74,7 +74,7 @@ An array of data to be passed to the API to help create the request.
 
 | key | description |
 | --- | ----------- |
-| uid | a unique identifier for the request that can be associated with your application. |
+| *uid* | a unique identifier for the request that can be associated with your application. |
 | callback | a custom callback URL whenever an action is made for this particular user. |
 | caption | a caption that the user should say in the recording window. |
 | data | a collection of key-value stores to be passed back to the callback. |
@@ -126,8 +126,8 @@ An array of data to help create the GuzzleHttp Client.
 
 | key | description |
 | --- | ----------- |
-| AppKey | Application Key from the Registered Application. |
-| SecretKey | Secret Key from the Registered Application. |
+| *AppKey* | Application Key from the Registered Application. |
+| *SecretKey* | Secret Key from the Registered Application. |
 
 --
 
