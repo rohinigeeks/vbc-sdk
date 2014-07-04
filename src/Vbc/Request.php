@@ -39,7 +39,7 @@ class Request
         }
 
         if ($options['auto'] === true) {
-            if ($this->client->isMobile) {
+            if (!$this->client->isMobile) {
                 $query['pin'] = "true";
             }
         }
