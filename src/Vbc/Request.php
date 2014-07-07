@@ -76,7 +76,7 @@ class Request
         ];
 
         try {
-            $response = $this->client->put('v1/requests/');
+            $response = $this->client->get('v1/requests/');
             $items = $response->json();
             $requests = [];
 
