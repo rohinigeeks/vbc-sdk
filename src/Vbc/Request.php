@@ -81,10 +81,14 @@ class Request
             $requests = [];
 
             foreach ($items as $item) {
-                $requests[] = new GuzzleHttp\Collection($item);
+                $requests[] = new GuzzleHttp\Collection($item['requests']);
             }
 
-            return $requests;
+            return [
+                'total' => $item['total'],
+                'size' => $item['size'],
+                'requests' => $requests
+            ];
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
                 // --
