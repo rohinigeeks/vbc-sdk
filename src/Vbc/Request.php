@@ -85,8 +85,9 @@ class Request
             }
 
             return [
-                'total' => $item['total'],
-                'size' => $item['size'],
+                'total' => $items['total'],
+                'size' => $items['size'],
+                'page' => $items['page'],
                 'requests' => $requests
             ];
         } catch (GuzzleHttp\Exception\RequestException $e) {
