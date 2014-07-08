@@ -78,7 +78,6 @@ class Request
         try {
             $response = $this->client->get('v1/requests/');
             $items = $response->json();
-            $requests = [];
 
             return [
                 'total' => $items['total'],
