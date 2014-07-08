@@ -80,15 +80,11 @@ class Request
             $items = $response->json();
             $requests = [];
 
-            foreach ($items as $item) {
-                $requests[] = new GuzzleHttp\Collection($item['requests']);
-            }
-
             return [
                 'total' => $items['total'],
                 'size' => $items['size'],
                 'page' => $items['page'],
-                'requests' => $requests
+                'requests' => new GuzzleHttp\Collection($item['requests'])
             ];
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
