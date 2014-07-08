@@ -84,7 +84,7 @@ class Request
                 'total' => $items['total'],
                 'size' => $items['size'],
                 'page' => $items['page'],
-                'requests' => new GuzzleHttp\Collection($item['requests'])
+                'requests' => new GuzzleHttp\Collection($items['requests'])
             ];
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
