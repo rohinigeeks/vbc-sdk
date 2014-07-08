@@ -68,15 +68,17 @@ class Request
     public function all($options = [])
     {
         $optionDefaults = [
-            'uid' => null,
             'status' => null,
-            'sort' => 'date',
-            'order' => 'desc',
+            'page' => 1,
             'size' => 20
         ];
+        
+        $options = array_merge($optionDefaults, $options);
 
         try {
-            $response = $this->client->get('v1/requests/');
+            $response = $this->client->get('v1/requests/', [
+                'query' => $options
+            ]);
             $items = $response->json();
 
             return [
