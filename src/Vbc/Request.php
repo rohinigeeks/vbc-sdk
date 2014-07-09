@@ -100,7 +100,7 @@ class Request
         $this->updateStatus($requestId, 'VERIFIED');
     }
 
-    public function reject($requestId, String $reason)
+    public function reject($requestId, \String $reason)
     {
         $this->updateStatus($requestId, 'REJECTED', $reason);
     }
