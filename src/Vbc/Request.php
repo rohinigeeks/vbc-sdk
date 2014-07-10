@@ -95,7 +95,7 @@ class Request
         }
     }
 
-    public function verify($requestId)
+    public function verify($requestId, $options = [])
     {
         $this->updateStatus($requestId, 'VERIFIED');
     }
