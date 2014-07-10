@@ -67,13 +67,13 @@ class Request
 
     public function all($options = [])
     {
-        $optionDefaults = [
+        $defaults = [
             'status' => null,
             'page' => 1,
             'size' => 20
         ];
         
-        $options = array_merge($optionDefaults, $options);
+        $options = array_merge($defaults, $options);
 
         try {
             $response = $this->client->get('v1/requests/', [
@@ -89,7 +89,7 @@ class Request
             ];
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
-                // --
+                return $e->getResponse();
             }
             return null;
         }
@@ -100,16 +100,24 @@ class Request
         $this->updateStatus($requestId, 'VERIFIED');
     }
 
-    public function reject($requestId, \String $reason)
+    public function reject($requestId, $options = [])
     {
-        $this->updateStatus($requestId, 'REJECTED', $reason);
+        $this->updateStatus($requestId, 'REJECTED', $options);
     }
 
-    protected function updateStatus($requestId, $status = 'REJECTED', $reason = null)
+    protected function updateStatus($requestId, $status = 'REJECTED', $options = [])
     {
+        $defaults = [
+            'reason' => null,
+            'admin' => null
+        ];
+        
+        $options = array_merge($defaults, $options);
+        
         $payload = [
             'status' => $status,
-            'reason' => $reason
+            'reason' => $options['reason'],
+            'admin' => $options['admin']
         ];
 
         try {
@@ -119,7 +127,7 @@ class Request
             return $response->json();
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
-                // --
+                return $e->getResponse();
             }
             return null;
         }
