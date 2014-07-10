@@ -97,7 +97,7 @@ class Request
 
     public function verify($requestId, $options = [])
     {
-        $this->updateStatus($requestId, 'VERIFIED');
+        $this->updateStatus($requestId, 'VERIFIED', $options);
     }
 
     public function reject($requestId, $options = [])
