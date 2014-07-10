@@ -69,6 +69,7 @@ class Request
     {
         $defaults = [
             'status' => null,
+            'uid' => null,
             'page' => 1,
             'size' => 20
         ];
