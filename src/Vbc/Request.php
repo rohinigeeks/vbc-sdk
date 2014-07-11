@@ -110,7 +110,7 @@ class Request
     {
         $defaults = [
             'reason' => null,
-            'admin' => null
+            'reviewer' => null
         ];
         
         $options = array_merge($defaults, $options);
@@ -118,7 +118,7 @@ class Request
         $payload = [
             'status' => $status,
             'reason' => $options['reason'],
-            'admin' => $options['admin']
+            'reviewer' => $options['reviewer']
         ];
 
         try {
