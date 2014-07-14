@@ -19,7 +19,8 @@ class Client
                 'headers' => [
                     'X-App-Key' => $config['AppKey'],
                     'X-Secret-Key' => $config['SecretKey']
-                ]
+                ],
+                'timeout' => 20
             ]
         ]);
 
