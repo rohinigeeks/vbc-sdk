@@ -7,7 +7,7 @@ use GuzzleHttp;
 class Client
 {
 
-    protected $baseUrl = 'https://{subdomain}.howlovely.co/{+version*}';
+    protected $baseUrl = 'https://{subdomain}.verifiedbycam.com/{+version*}';
 
     protected $client;
 
