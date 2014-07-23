@@ -48,6 +48,10 @@ class Request
             $query['pin'] = $options['pin'] ? "true": "";
         }
 
+        if (isset($options['flash']) {
+            $query['flash'] = $options['flash'] ? "true": "";
+        }
+
         try {
             $body = ['json' => $payload];
 
