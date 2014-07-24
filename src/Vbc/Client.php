@@ -13,8 +13,10 @@ class Client
 
     public function __construct($config = [])
     {
+        $version = (isset($config['version'])) ? $config['version']: 'v1';
+        
         $this->client = new GuzzleHttp\Client([
-            'base_url' => [$this->baseUrl, ['subdomain' => 'api', 'version' => 'v1']],
+            'base_url' => [$this->baseUrl, ['subdomain' => 'api', 'version' => $version]],
             'defaults' => [
                 'headers' => [
                     'X-App-Key' => $config['AppKey'],
