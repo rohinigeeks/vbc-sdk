@@ -7,18 +7,7 @@ An SDK for the VBC API in PHP. Enjoy!
 
 The library uses Composer as it's dependency manager. Thus, installing this library follows Composers and the PSR standards. You can read more about composer at this link https://getcomposer.org/
 
-Before anything, you must create/update your Composer.json and add the following
-```
-...
-    "repositories": [
-        {
-            "url": "https://github.com/incube8/vbc-sdk.git",
-            "type": "git"
-        }
-    ]
-...
-```
-and add the library to the require block..
+Before anything, you must create/update your Composer.json and add the library to the require block..
 ```
 ...
     "require": {
