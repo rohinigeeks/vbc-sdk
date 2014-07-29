@@ -23,7 +23,7 @@ class Request
 
     public function create($data = [], $options = [])
     {
-        $dataKeys = ['uid', 'data', 'caption', 'callback'];
+        $dataKeys = ['uid', 'data', 'caption', 'callback', 'steps', 'thumbnail'];
         
         $payload = [];
         $query = [];
