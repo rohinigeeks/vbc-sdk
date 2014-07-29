@@ -1,7 +1,7 @@
 {
     "name": "incube8/vbc-sdk",
     "type": "library",
-    "description": "Vbc-sdk is what the title is. It is an SDK for the VBC API.",
+    "description": "SDK to access the VBC API",
     "homepage": "http://verifiedbycam.com/",
     "license": "MIT",
 
