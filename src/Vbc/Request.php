@@ -59,7 +59,7 @@ class Request
                 $body['query'] = $query;
             }
 
-            $response = $this->client->post('v1/request', $body);
+            $response = $this->client->post('request', $body);
             return $response->json();
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
@@ -81,7 +81,7 @@ class Request
         $options = array_merge($defaults, $options);
 
         try {
-            $response = $this->client->get('v1/requests/', [
+            $response = $this->client->get('requests', [
                 'query' => $options
             ]);
             $items = $response->json();
@@ -126,7 +126,7 @@ class Request
         ];
 
         try {
-            $response = $this->client->put('v1/request/' . $requestId, [
+            $response = $this->client->put('request' . $requestId, [
                 'json' => $payload
             ]);
             return $response->json();
