@@ -7,16 +7,14 @@ use GuzzleHttp;
 class Client
 {
 
-    protected $baseUrl = 'https://{subdomain}.verifiedbycam.com/{+version*}';
-
     protected $client;
 
     public function __construct($config = [])
     {
         $version = (isset($config['version'])) ? $config['version']: 'v1';
-        
+
         $this->client = new GuzzleHttp\Client([
-            'base_url' => [$this->baseUrl, ['subdomain' => 'api', 'version' => $version]],
+            'base_url' => 'https://api.verifiedbycam.com/' . $version . '/',
             'defaults' => [
                 'headers' => [
                     'X-App-Key' => $config['AppKey'],
