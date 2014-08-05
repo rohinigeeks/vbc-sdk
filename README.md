@@ -26,7 +26,8 @@ require_once 'vendor/autoload.php';
  
 $config = [
     'AppKey' => '',
-    'SecretKey' => ''
+    'SecretKey' => '',
+    'Version' => 'V2' // or V1
 ];
  
 // oop
@@ -42,6 +43,11 @@ $tokenOrPin = $request->create([
     'caption' => 'Hi! my name is john from the lovely island of Singapore',
     'data' => [
         'foo' => 'bar'
+    ],
+    'thumbnail' => 'http://link.to/thumbnail',
+    'steps' => [
+        'VTYPE_VIDEO' => true,
+        'VTYPE_ESIGN' => 'http://link.to/pdf'
     ]
 ]);
  
@@ -67,6 +73,8 @@ An array of data to be passed to the API to help create the request.
 | callback | a custom callback URL whenever an action is made for this particular user. |
 | caption | a caption that the user should say in the recording window. |
 | data | a collection of key-value stores to be passed back to the callback. |
+| steps | an array of supported steps. see below. Added in V2. |
+| thumbnail | a url of the user's thumbnail image. Added in V2. |
 
 ###### options
 An array of options to help create the request
@@ -122,6 +130,18 @@ An array of data to help create the GuzzleHttp Client.
 
 #### getInstance()
 A static alias of __constructor.
+
+--
+
+## Example of steps payload
+
+```javascript
+{
+    "VTYPE_ESIGN": "http://link.to/pdf",
+    "VTYPE_VIDEO": true,
+    "VTYPE_DOCUMENT": true
+}
+```
 
 ## License
 
