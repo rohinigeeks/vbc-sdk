@@ -126,7 +126,7 @@ class Request
         ];
 
         try {
-            $response = $this->client->put('request' . $requestId, [
+            $response = $this->client->put('request/' . $requestId, [
                 'json' => $payload
             ]);
             return $response->json();
