@@ -11,10 +11,8 @@ class Client
 
     public function __construct($config = [])
     {
-        $version = (isset($config['Version'])) ? $config['Version']: 'v1';
-
         $this->client = new GuzzleHttp\Client([
-            'base_url' => 'https://api.verifiedbycam.com/' . $version . '/',
+            'base_url' => 'https://api.verifiedbycam.com/v2/',
             'defaults' => [
                 'headers' => [
                     'X-App-Key' => $config['AppKey'],
