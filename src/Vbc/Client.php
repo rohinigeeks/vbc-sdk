@@ -11,8 +11,9 @@ class Client
 
     public function __construct($config = [])
     {
+        $config['Host'] = isset($config['Host']) ? $config['Host']: 'https://api.verifiedbycam.com/v2/';
         $this->client = new GuzzleHttp\Client([
-            'base_url' => 'https://api.verifiedbycam.com/v2/',
+            'base_url' => $config['Host'],
             'defaults' => [
                 'headers' => [
                     'X-App-Key' => $config['AppKey'],
