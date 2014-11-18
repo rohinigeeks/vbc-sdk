@@ -63,7 +63,7 @@ class Request
             return $response->json();
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
-                // --
+                throw new \Exception($e->getResponse());
             }
             return null;
         }
@@ -94,7 +94,7 @@ class Request
             ];
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
-                return $e->getResponse();
+                throw new \Exception($e->getResponse());
             }
             return null;
         }
@@ -132,7 +132,7 @@ class Request
             return $response->json();
         } catch (GuzzleHttp\Exception\RequestException $e) {
             if ($e->hasResponse()) {
-                return $e->getResponse();
+                throw new \Exception($e->getResponse());
             }
             return null;
         }
