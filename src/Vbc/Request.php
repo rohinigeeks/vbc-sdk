@@ -65,7 +65,7 @@ class Request
             if ($e->hasResponse()) {
                 throw new \Exception($e->getResponse());
             }
-            throw new \Exception('An error has occured: endpoint did not have a response body.');
+            throw new \Exception($e->getMessage());
         }
     }
 
@@ -96,7 +96,7 @@ class Request
             if ($e->hasResponse()) {
                 throw new \Exception($e->getResponse());
             }
-            throw new \Exception('An error has occured: endpoint did not have a response body.');
+            throw new \Exception($e->getMessage());
         }
     }
 
@@ -134,7 +134,7 @@ class Request
             if ($e->hasResponse()) {
                 throw new \Exception($e->getResponse());
             }
-            throw new \Exception('An error has occured: endpoint did not have a response body.');
+            throw new \Exception($e->getMessage());
         }
     }
 
