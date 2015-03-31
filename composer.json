@@ -1,5 +1,5 @@
 {
-    "name": "incube8/vbc-sdk",
+    "name": "rohinigeeks/vbc-sdk",
     "type": "library",
     "description": "SDK to access the VBC API",
     "homepage": "http://verifiedbycam.com/",
